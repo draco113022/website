@@ -184,10 +184,11 @@ section{
    display: flex;
    align-items: center;
    justify-content: center;
-   background: url"home.png" no-repeat;
+   background: url("home.png") no-repeat;
    background-size: cover;
    background-position: center;
 }
+
 
 .home .content {
    text-align: center;
