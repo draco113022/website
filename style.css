@@ -179,6 +179,11 @@ section{
 
 /* home */
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .home {
    min-height: 100vh;
    display: flex;
@@ -196,6 +201,7 @@ section{
 
 .home h3 {
    font-size: 2em;
+   font-weight: bold; /* Make the text bold */
    margin-bottom: 20px;
 }
 
@@ -207,7 +213,6 @@ section{
    text-decoration: none;
    border-radius: 5px;
 }
-
 
 
 
