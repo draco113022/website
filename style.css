@@ -187,19 +187,25 @@ section{
    background: url("home.png") no-repeat;
    background-size: cover;
    background-position: center;
+   color: #fff; /* Set text color to be visible against the background */
 }
-
 
 .home .content {
    text-align: center;
 }
 
-.home .content h3 {
-   font-size: 6rem;
-   text-transform: uppercase;
-   font-weight: bold; /* Set font-weight to bold */
-   color: #000000;
-   padding-bottom: 3.5rem;
+.home h3 {
+   font-size: 2em;
+   margin-bottom: 20px;
+}
+
+.home .btn {
+   display: inline-block;
+   padding: 10px 20px;
+   background-color: #3498db;
+   color: #fff;
+   text-decoration: none;
+   border-radius: 5px;
 }
 
 
