@@ -8,14 +8,12 @@
    --light-black:#333;
    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
-
 *{
    font-family: 'Poppins', sans-serif;
    margin:0; padding:0;
-   box-sizing: border-box;
+   box-sizing: content-box;
    outline: none; border:none;
    text-decoration: none;
-   transition: .2s linear;
    text-transform: capitalize;
 }
 
@@ -42,15 +40,6 @@ html::-webkit-scrollbar-thumb{
 body{
    background: var(--bg); 
 }
-
-body.active{
-  --primary-color:#fff;
-  --light-black:#eee;
-  --white:#333;
-  --bg:#222;
-  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.4);
-}
-
 section{
    padding: 3rem 9%;
 }
@@ -68,41 +57,22 @@ section{
     display: inline-block;
     margin-top: 1rem;
     padding: .8rem 2.8rem;
-    border-radius: 5rem;
-    border-top-left-radius: 0;
-    border: 0.2rem solid var(--main-color);
-    cursor: pointer;
-    color: var(--main-color);
-    font-size: 1.7rem;
-    overflow: hidden;
-    z-index: 0;
-    position: relative;
+    border: 0.1rem solid var(--main-color);
+    
   }
   
-  .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: var(--main-color);
-    z-index: -1;
-    -webkit-transition: .2s linear;
-    transition: .2s linear;
-    clip-path: circle(0% at 0% 5%);
-  }
-  
-  .btn:hover::before {
-     clip-path: circle(100%);
-  }
-  
-  .btn:hover {
-    color: var(--white);
-  }
+  .buy, .thankyou {
+   text-align: center;
+   padding: 50px;
+}
 
-/* header */
-
+input, select, textarea {
+   margin-bottom: 20px;
+   width: 100%;
+   padding: 10px;
+   box-sizing: border-box;
+}
+  
 .header{
   position: fixed;
   top: 0;
@@ -127,7 +97,6 @@ section{
    color:var(--main-color);
    padding-right: .5rem;
 }
-
 .header .navbar a{
    font-size: 1.7rem;
    margin-left: 2rem;
@@ -135,11 +104,6 @@ section{
   padding-block: 1.6rem;
   position: relative; 
 }
-
-.header .navbar a:hover{
-   color: var(--main-color);
-}
-
 .header .navbar a::before {
    content: "";
    position: absolute;
@@ -152,72 +116,32 @@ section{
    transition: 0.5s ease;
  }
 
- .header .navbar a:is(:hover, :focus)::before { 
-   transform: scaleX(1); 
- }
-
-.header .icons div{
-   height:4.5rem;
-   width:4.5rem;
-   line-height:4.5rem;
-   font-size: 2rem;
-   border-radius: .5rem;
-   margin-left: .5rem;
-   cursor: pointer;
-   color:var(--primary-color);
-   background: var(--main-color);
-   text-align: center;
-}
-.header .icons div:hover{
-   color: var(--main-color);
-   background: var(--primary-color);
-}
-
+ 
+ 
 #menu{
    display: none;
 }
-
-/* home */
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 .home {
    min-height: 100vh;
    display: flex;
    align-items: center;
    justify-content: center;
-   background: url("home.png") no-repeat;
+   background: url"home.png" no-repeat;
    background-size: cover;
    background-position: center;
-   color: #fff; /* Set text color to be visible against the background */
 }
 
 .home .content {
    text-align: center;
 }
-   .home .content h3 {
+
+.home .content h3 {
    font-size: 6rem;
    text-transform: uppercase;
-   font-weight: bold; 
+   font-weight: bold; /* Set font-weight to bold */
    color: #000000;
    padding-bottom: 3.5rem;
 }
-.home .btn {
-   display: inline-block;
-   padding: 10px 20px;
-   background-color: #3498db;
-   color: #fff;
-   text-decoration: none;
-   border-radius: 5px;
-}
-
-
-
- /* end */
-
  .about .row{
     display: flex;
     align-items: center;
@@ -248,11 +172,6 @@ body {
     padding: 2rem 0;
     line-height: 2;
   }
-
-  /* end */
-
-  /* service */
- 
  .services .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -272,11 +191,6 @@ body {
     height: 15rem;
     transition: 500ms ease;
  }
-
- .services .box-container .box:hover img{
-    transform: scale(-1) rotate(180deg);
- }
- 
  .services .box-container .box h3{
     font-size: 2rem;
     padding:1rem 0;
@@ -289,14 +203,9 @@ body {
     line-height: 2;
  }
 
- /* end */
-
-/* pricing */
-
-
 .label {
-   background-color: #ff6347; /* Use your preferred color for the label background */
-   color: #fff; /* Set text color */
+   background-color: #ff6347; 
+   color: #fff; 
    font-weight: bold;
    padding: 0.5rem;
    border-radius: 0.5rem;
@@ -308,11 +217,10 @@ body {
 .plan .box-container {
    display: flex;
    align-items: normal;
-   justify-content: flex-start; /* Adjusted to left alignment */
+   justify-content: flex-start; 
    flex-wrap: wrap;
    gap: 6rem;
 }
-
 .plan .box-container .box {
    background: var(--white);
    width: 30rem;
@@ -322,10 +230,6 @@ body {
    position: relative;
 }
 
-.plan .box-container .box:hover {
-   transform: scale(1.05);
-}
-
 .plan .box-container .box .title {
    font-size: 2.5rem;
    background: var(--main-color);
@@ -333,7 +237,6 @@ body {
    color: var(--white);
    padding: 1rem 0;
 }
-
 .plan .box-container .box .price {
    font-size: 4rem;
    color: var(--light-black);
@@ -379,77 +282,70 @@ body {
    right: 2rem;
    background: var(--white);
 }
-
-  /* end */
-
-  /* gallery */
-
-  .gallery .gallery-slider .swiper-slide{
-    overflow: hidden;
-    border-radius: .5rem;
-    height: 50rem;
-    width:35rem;
+  .gallery .gallery-box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+   gap: 1.5rem;
 }
 
-.gallery .gallery-slider .swiper-slide img{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-}
-
-  /* end */
-
-  /* review */
-
-.review .review-slider{
+.gallery .gallery-box {
+   border-radius: 0.5rem;
+   background: var(--white);
    box-shadow: var(--box-shadow);
 }
 
-.review .review-slider .slide{
+.gallery .gallery-box img {
+   width: 100%;
+   height: 100%;
+   border-radius: 0.5rem;
+   object-fit: cover;
+}
+  .review .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 1.5rem;
+}
+
+.review .box {
+   border-radius: 0.5rem;
    background: var(--white);
-    border-radius: .5rem;
-    text-align: center;
-    padding: 3rem;
+   padding: 2rem;
+   text-align: center;
+   box-shadow: var(--box-shadow);
+   margin-bottom: 1.5rem;
 }
 
-.review .review-slider .slide img{
-    height: 10rem;
-    width: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: .5rem;
+.review .box img {
+   border-radius: 50%;
+   height: 15rem;
+   width: 15rem;
+   object-fit: cover;
+   margin-bottom: 1rem;
 }
 
-.review .review-slider .slide h3{
-    font-size: 2.5rem;
-    color:var(--primary-color);
+.review .box h3 {
+   font-size: 2rem;
+   color: var(--primary-color);
 }
 
-.review .review-slider .slide p{
-    font-size: 1.6rem;
-    color:var(--primary-color);
-    line-height: 1.7;
-    padding: 1rem 0;
+.review .box p {
+   font-size: 1.5rem;
+   color: var(--main-color);
 }
 
-.review .review-slider .slide .stars{
-    padding: 1rem 0;
-    padding-bottom: 1.5rem;
+.review .box .stars {
+   margin-top: 0.5rem;
 }
 
-.review .review-slider .slide .stars i{
-    font-size: 2rem;
-    color:var(--main-color);
+.review .box .stars i {
+   color: var(--primary-color);
+   font-size: 1.7rem;
+   margin-right: 0.2rem;
 }
 
-.swiper-pagination-bullet-active{
-    background: var(--main-color);
+.review .box:nth-last-child(-n+2) {
+   grid-row: auto-end;
 }
-
-/* end */
-
-/* team */
-
 .team .box-container {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -497,18 +393,11 @@ body {
    margin: .5rem 0;
 }
 
-.team .box-container .box .share a:hover {
-   background: var(--main-color);
-}
 
-/* Arrange the last two boxes at the bottom */
+
 .team .box-container .box:nth-last-child(-n+2) {
    grid-row: auto-end;
 }
-
-
- /* end */
-
  .contact form{
    text-align: center;
 }
@@ -541,9 +430,6 @@ body {
 .contact form .inputBox select{
    width: 49%;
 }
-
-
-/* footer */
 
 .footer{
    background: var(--white);
@@ -584,9 +470,7 @@ body {
    color: var(--primary-color);
  }
  
- .footer .box-container .box a:hover {
-   color: var(--primary-color);
- }
+ 
  
  .footer .credit {
    margin-top: 2.5rem;
@@ -602,14 +486,10 @@ body {
    color: var(--primary-color);
  }
 
-/* end */
-
-/* media query */
-
 @media (max-width:991px){
 
    html{
-      font-size: 55%;
+      font-size: 10%;
    }
  
    .header{

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="buy" id="buy">
+
+        <h1 class="heading">Buy Now</h1>
+
+        <form action="thankyou.html" method="post">
+            <div class="inputBox">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="inputBox">
+                <input type="number" name="number" placeholder="Phone Number" required>
+                <select name="plan" required>
+                    <option value="solo-basic">Solo Basic</option>
+                    <option value="premium">Duo Basic</option>
+                    <option value="ultimate">Group Basic</option>
+                    <option value="basic">Solo Premium</option>
+                    <option value="premium">Duo Premium</option>
+                    <option value="ultimate">Group Premium</option>
+                </select>
+            </div>
+
+            <textarea name="message" placeholder="Additional Information"></textarea>
+
+            <button type="submit" class="btn">Buy Now</button>
+        </form>
+
+    </section>
+
+</body>
+</html>
